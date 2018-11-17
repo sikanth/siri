@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NewGame</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="background-color:#f5fffa" onload="mymessage()">
+	
+	<div class="container-fluid text-center " style="margin-top:-5px">
+	
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  	 
+        <a class="text-info" href="score.html" style="text-decoration: none"><h2 class="border-ganger"> Top Score Sports Cricket</h2> </a>
+      
+    <ul class="navbar-nav mr-auto" style="margin-left: 70px">
+      <li class="nav-item active">
+        <a class="nav-link text-dark " href="score.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-dark" href="newgame.html">New Game</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Matches
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Single Match</a>
+          <a class="dropdown-item" href="#">Tournaments</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link active text-dark" href="scoreboard.html">Score Board</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-dark" href="feedback.html">FeedBack</a>
+      </li>
+    </ul>
+    
+        <a class="nav-link active text-dark border" href="contact.html">CONTACT US</a>
+     
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+<div class="container-fluid">
+<button class="btn btn-info  btn-md btn-block" type="button" onclick="test()" > Play Game</button><br><br>
+<form id="demo" style="display: none;">
+	<div class="form-group">
+    <label for="inputsm">Player Name </label>
+    <input class="form-control input-sm" id="inputsm" type="text">
+  </div>
+   <div class="form-group">
+    <label for="inputdefault">Player Number</label>
+    <input class="form-control" id="inputdefault" type="text">
+  </div>
+  <div class="form-group">
+    <label for="inputdefault">Address</label>
+    <input class="form-control input-sm" id="inputsm" type="text">
+  </div>
+<div>
+	<button class="btn btn-success" type="button">Submit</button><button class="btn btn-danger" type="button" onclick="cancel()">Cancel</button>
+</div>
+	
+</form>
+
+<form id="demo1" style="display:inline; ">
+	<table class="table text-dark"><th><td>Player Name</td><td>Score</td><td>Current RR</td></th>
+	</table>
+	
+	<div class="col-md-6" id="side1">
+		<table><tr><td><button type="button" class="btn btn-md btn-primary border-rounded">.</button></td><td><button type="button"  class="btn btn-success border-rounded">1</button></td><td><button type="button"  class="btn btn-info border-rounded">2</button></td><td><button type="button"  class="btn btn-warning border-rounded">3</button></td><td><button type="button"  class="btn btn-primary border-rounded">4</button></td><td><button type="button"  class="btn btn-secondary border-rounded">6</button></td> <td><button type="button"  class="btn btn-danger border-rounded">UNDO</button></td></tr></table>
+		
+	</div> 
+
+	<div class="col-md-6" id="side2" >
+		<table><tr><td><button type="button"  class="btn btn-primary border-circle">.</button></td><td><button type="button"  class="btn btn-primary border-rounded">1</button></td><td><button type="button"  class="btn btn-primary border-rounded">2</button></td><td><button type="button"  class="btn btn-primary border-rounded">3</button></td><td><button type="button"  class="btn btn-primary border-rounded">4</button></td><td><button type="button"  class="btn btn-primary border-rounded">6</button></td></tr></table>
+		
+	</div><hr>
+	<div class="container-fluid" style="width: 50%">
+	
+<h2 class="text-center " >Over Progress</h2>
+<div class="progress" style="height:20px"><h5>1 st over</h5>
+    <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width:40%;height:30px">40%</div>
+</div><br>
+<div class="progress" style="height:20px"> <h5>2 nd over</h5>
+   <div class="progress-bar  progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
+
+</div><br>
+<div class="progress" style="height:20px"><h5>3 rd over</h5>
+   <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
+
+</div>
+</div>
+
+
+</form>
+
+</div>
+
+<script type="text/javascript">
+	
+	function test(){
+	document.getElementById("demo").style.display="block";
+}
+
+function cancel(){
+	document.getElementById("demo").style.display="none";
+}
+
+</script>
+
+<script type="text/javascript" src="script1.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+<script type="text/javascript">
+	
+	var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "home.htm"
+    })
+    .when("/red", {
+        templateUrl : "newgame.htm"
+    })
+    .when("/green", {
+        templateUrl : "scoreboard.htm"
+    })
+    .when("/blue", {
+        templateUrl : "feedback.htm"
+    });
+});
+
+</script>
+</body>
+</html>

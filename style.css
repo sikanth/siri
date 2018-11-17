@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: grey;
+}
+
+#demo{
+	
+	background-color: grey;
+	width: 50%;
+	border: 2px solid pink;
+	height: auto;
+}
+#side1{
+	width: 50%;
+
+}
+#side2{
+	width: 50%;
+	background-color:lightgrey; 
+}
+
+
+.container {
+  width: 100%;
+  height: auto;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+ 
+  color: white;
+}
+
+.html {width: 90%; background-color: #4CAF50;}
+.css {width: 80%; background-color: #2196F3;}
+.js {width: 65%; background-color: #f44336;}
+.php {width: 60%; background-color: #808080;}
